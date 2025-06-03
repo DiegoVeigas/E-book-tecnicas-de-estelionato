@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento via PIX</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #f9f9f9;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: none;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .msg {
+      margin-top: 15px;
+      color: #28a745;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pagamento via PIX</h1>
+    <textarea id="pixCode" readonly>
+00020126580014BR.GOV.BCB.PIX0136642b77d4-ecc7-4776-a445-cb012d0268c5520400005303986540519.995802BR5924DIEGO JOSE SANTOS VEIGAS6008Altamira61086837473062070503***6304151E
+    </textarea>
+    <button onclick="copiarPix()">Copiar Código PIX</button>
+    <div class="msg" id="mensagem">Código copiado com sucesso!</div>
+  </div>
+
+  <script>
+    function copiarPix() {
+      const pix = document.getElementById("pixCode");
+      pix.select();
+      pix.setSelectionRange(0, 99999); // para dispositivos móveis
+      document.execCommand("copy");
+
+      const msg = document.getElementById("mensagem");
+      msg.style.display = "block";
+
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Finalizar Compra</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .container {
+      background-color: #222;
+      width: 80%;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    h2 {
+      color: #fff;
+    }
+
+    .pagamento {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centraliza os botões horizontalmente */
+      gap: 20px;
+    }
+
+    button {
+      width: 200px;
+      border-radius: 15px;
+      border: none;
+      padding: 10px;
+      background: red;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .voltar {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Escolha a forma de pagamento:</h2>
+    <div class="pagamento">
+      <a href="pix.html"><button>PIX</button></a>
+      <a href="cc.html"><button>CARTÃO</button></a>
+    </div>
+    <a class="voltar" href="index.html">Voltar ao início</a>
+  </div>
+</body>
+</html>
